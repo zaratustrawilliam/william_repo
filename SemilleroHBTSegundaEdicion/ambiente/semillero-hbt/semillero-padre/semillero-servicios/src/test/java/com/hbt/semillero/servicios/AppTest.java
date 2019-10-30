@@ -109,7 +109,7 @@ public class AppTest {
 	 *
 	 */
 	@Test(description = "Instanciar un enum de la clase EstadoEnum")
-	public void invertirCadenaPU7() {
+	public void Ejercicio2PU1() {
 		EstadoEnum est1 = EstadoEnum.ACTIVO;
 		Assert.assertEquals(est1,EstadoEnum.ACTIVO);
 	}
@@ -122,7 +122,7 @@ public class AppTest {
 	 *
 	 */
 	@Test(description = "Devolver un String con el nombre de la constante (ACTIVO)")
-	public void invertirCadenaPU8() {
+	public void Ejercicio2PU2() {
 		EstadoEnum est1 = EstadoEnum.ACTIVO;
 		String nombre = est1.name();
 		Assert.assertEquals(nombre,EstadoEnum.ACTIVO.name());
@@ -136,7 +136,7 @@ public class AppTest {
 	 *
 	 */
 	@Test(description = "Devolver un entero con la posición del enum según está declarada")
-	public void invertirCadenaPU9() {
+	public void Ejercicio2PU3() {
 		EstadoEnum est1 = EstadoEnum.ACTIVO;
 		int posicion = est1.ordinal();
 		Assert.assertEquals(posicion,EstadoEnum.ACTIVO.ordinal());
@@ -150,7 +150,7 @@ public class AppTest {
 	 *
 	 */
 	@Test(description = "Comparar el enum con el parámetro según el orden en el que están declarados lo enum")
-	public void invertirCadenaPU10() {
+	public void Ejercicio2PU4() {
 		EstadoEnum est1 = EstadoEnum.ACTIVO;
 		Assert.assertTrue(est1.equals(EstadoEnum.ACTIVO));
 		Assert.assertFalse(est1.equals(EstadoEnum.INACTIVO));
@@ -164,7 +164,7 @@ public class AppTest {
 	 *
 	 */
 	@Test(description = "Devolver un array que contiene todos los enum")
-	public void invertirCadenaPU11() {
+	public void Ejercicio2PU5() {
 		EstadoEnum est1 = EstadoEnum.ACTIVO;
 		Assert.assertEquals(est1.values(),EstadoEnum.values());
 	}
@@ -177,7 +177,7 @@ public class AppTest {
 	 *
 	 */
 	@Test(description = "prueba toString comic")
-	public void invertirCadenaPU12() {
+	public void Ejercicio2PU6() {
 		Comic c =  new Comic();
 		Assert.assertNotNull(c.toString());
 	}
