@@ -267,6 +267,7 @@ public class Comic implements Serializable {
 	 * 
 	 * @return El estadoEnum asociado a la clase
 	 */
+	@Enumerated(value = EnumType.STRING)
 	public String getEstadoEnum() {
 		return estadoEnum;
 	}
