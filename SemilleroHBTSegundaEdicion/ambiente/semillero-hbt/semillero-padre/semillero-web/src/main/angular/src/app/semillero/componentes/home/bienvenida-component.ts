@@ -9,6 +9,12 @@ import { Component, OnInit } from '@angular/core';
   selector: 'bienvenida',
   templateUrl: './bienvenida-component.html',
 })
-export class BienvenidaComponent {
+export class BienvenidaComponent implements OnInit{
+
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    
+  }
 
 }
