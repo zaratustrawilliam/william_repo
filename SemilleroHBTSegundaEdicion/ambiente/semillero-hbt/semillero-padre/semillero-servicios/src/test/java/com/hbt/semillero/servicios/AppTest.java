@@ -1,10 +1,16 @@
 package com.hbt.semillero.servicios;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.hbt.semillero.dto.ComicDTO;
 import com.hbt.semillero.entidades.Comic;
 import com.hbt.semillero.entidades.EstadoEnum;
+import com.hbt.semillero.entidades.TematicaEnum;
+import com.hbt.semillero.pojo.GestionarComicPOJO;
 
 public class AppTest {
 
@@ -34,7 +40,7 @@ public class AppTest {
 	 * @author William 
 	 *
 	 */
-	@Test(description = "Caso inversion de la cadena")
+	@Test(description = "Caso inversion de la cadena", enabled = false)
 	public void invertirCadenaPU() {
 		String cadenaInvertir = "codigo";
 		String cadenaEsperada = "ogidoc";
@@ -48,7 +54,7 @@ public class AppTest {
 	 * @author William 
 	 *
 	 */
-	@Test(description = "Caso donde el parametro es vacio")
+	@Test(description = "Caso donde el parametro es vacio", enabled = false)
 	public void invertirCadenaPU2() {
 		Assert.assertEquals(invertirCadena(""),"");
 	}
@@ -60,7 +66,7 @@ public class AppTest {
 	 * @author William 
 	 *
 	 */
-	@Test(description = "Caso de inversion que la cadena")
+	@Test(description = "Caso de inversion que la cadena", enabled = false)
 	public void invertirCadenaPU3() {
 		Assert.assertNotEquals(invertirCadena("abac"),"abac");
 	}
@@ -72,7 +78,7 @@ public class AppTest {
 	 * @author William 
 	 *
 	 */
-	@Test(description = "Caso de verificacion del tamaño de la cadena invertida")
+	@Test(description = "Caso de verificacion del tamaño de la cadena invertida", enabled = false)
 	public void invertirCadenaPU4() {
 		Assert.assertEquals(invertirCadena("suma").length(),4);
 	}
@@ -84,7 +90,7 @@ public class AppTest {
 	 * @author William 
 	 *
 	 */
-	@Test(description = "Caso de verificacion de cadenas con espacios")
+	@Test(description = "Caso de verificacion de cadenas con espacios", enabled = false)
 	public void invertirCadenaPU5() {
 		Assert.assertEquals(invertirCadena("a la ")," al a");
 	}
@@ -96,7 +102,7 @@ public class AppTest {
 	 * @author William 
 	 *
 	 */
-	@Test(description = "Caso de verificacion de cadenas con caracteres   especiales")
+	@Test(description = "Caso de verificacion de cadenas con caracteres   especiales", enabled = false)
 	public void invertirCadenaPU6() {
 		Assert.assertEquals(invertirCadena("hol$_op"),"po_$loh");
 	}
@@ -108,7 +114,7 @@ public class AppTest {
 	 * @author William 
 	 *
 	 */
-	@Test(description = "Instanciar un enum de la clase EstadoEnum")
+	@Test(description = "Instanciar un enum de la clase EstadoEnum", enabled = false)
 	public void Ejercicio2PU1() {
 		EstadoEnum est1 = EstadoEnum.ACTIVO;
 		Assert.assertEquals(est1,EstadoEnum.ACTIVO);
@@ -121,7 +127,7 @@ public class AppTest {
 	 * @author William
 	 *
 	 */
-	@Test(description = "Devolver un String con el nombre de la constante (ACTIVO)")
+	@Test(description = "Devolver un String con el nombre de la constante (ACTIVO)", enabled = false)
 	public void Ejercicio2PU2() {
 		EstadoEnum est1 = EstadoEnum.ACTIVO;
 		String nombre = est1.name();
@@ -135,7 +141,7 @@ public class AppTest {
 	 * @author William
 	 *
 	 */
-	@Test(description = "Devolver un entero con la posición del enum según está declarada")
+	@Test(description = "Devolver un entero con la posición del enum según está declarada", enabled = false)
 	public void Ejercicio2PU3() {
 		EstadoEnum est1 = EstadoEnum.ACTIVO;
 		int posicion = est1.ordinal();
@@ -149,7 +155,8 @@ public class AppTest {
 	 * @author William
 	 *
 	 */
-	@Test(description = "Comparar el enum con el parámetro según el orden en el que están declarados lo enum")
+	@Test(description = "Comparar el enum con el parámetro según el orden en el que están declarados lo enum",
+			enabled = false)
 	public void Ejercicio2PU4() {
 		EstadoEnum est1 = EstadoEnum.ACTIVO;
 		Assert.assertTrue(est1.equals(EstadoEnum.ACTIVO));
@@ -163,7 +170,7 @@ public class AppTest {
 	 * @author William
 	 *
 	 */
-	@Test(description = "Devolver un array que contiene todos los enum")
+	@Test(description = "Devolver un array que contiene todos los enum", enabled = false)
 	public void Ejercicio2PU5() {
 		EstadoEnum est1 = EstadoEnum.ACTIVO;
 		Assert.assertEquals(est1.values(),EstadoEnum.values());
@@ -176,10 +183,75 @@ public class AppTest {
 	 * @author William
 	 *
 	 */
-	@Test(description = "prueba toString comic")
+	@Test(description = "prueba toString comic", enabled = false)
 	public void Ejercicio2PU6() {
 		Comic c =  new Comic();
 		Assert.assertNotNull(c.toString());
+	}
+	
+	/**
+	 * 
+	 * Metodo encargado de probar la base de datos FAKE
+	 * @author William Vasquez
+	 *
+	 */
+	@Test(enabled = false)
+	public void Clase3PU() {
+		GestionarComicPOJO pu = new GestionarComicPOJO();
+		Assert.assertTrue(pu.getListaComics().isEmpty());
+	}
+	
+	@Test(enabled = false)
+	public void creartComicDTOTest() {
+		GestionarComicPOJO gestionarComicPOJO = new GestionarComicPOJO();
+
+		ComicDTO comicDTO = gestionarComicPOJO.CrearComicDTO("101", "Captain America Corps 1-5 USA", "Panini Comics",
+				TematicaEnum.FANTASTICO.name(), "BIBLIOTECA MARVEL", 128, new BigDecimal(5000),
+				"Phillippe Briones, Roger Stern", Boolean.FALSE, LocalDate.now(), "ACTIVO", 5L);
+
+		gestionarComicPOJO.agregarListDTO(comicDTO);
+
+		Assert.assertNotNull(gestionarComicPOJO.getListaComics());
+		Assert.assertTrue(!gestionarComicPOJO.getListaComics().isEmpty());
+		Assert.assertTrue(gestionarComicPOJO.getListaComics().size() == 1);
+
+		comicDTO = new ComicDTO();
+
+		comicDTO.setId("100");
+		comicDTO.setNombre("Dragon ball Yamcha");
+		comicDTO.setEditorial("Planeta Cómic");
+		comicDTO.setTematica(TematicaEnum.AVENTURAS.name());
+		comicDTO.setColeccion("Manga Shonen");
+		comicDTO.setNumeroPaginas(100);
+		comicDTO.setPrecio(new BigDecimal(2100));
+		comicDTO.setAutores("Dragon Garow Lee");
+		comicDTO.setColor(Boolean.TRUE);
+		comicDTO.setFechaVenta(LocalDate.now());
+		comicDTO.setEstado("ACTIVO");
+		comicDTO.setCantidad(20L);
+
+		gestionarComicPOJO.agregarListDTO(comicDTO);
+
+		Assert.assertTrue(gestionarComicPOJO.getListaComics().size() > 1);
+
+		comicDTO = new ComicDTO();
+
+		comicDTO.setId("100");
+		comicDTO.setNombre("Dragon ball Yamcha");
+		comicDTO.setEditorial("Planeta Cómic");
+		comicDTO.setTematica(TematicaEnum.AVENTURAS.name());
+		comicDTO.setColeccion("Manga Shonen");
+		comicDTO.setNumeroPaginas(100);
+		comicDTO.setPrecio(new BigDecimal(2100));
+		comicDTO.setAutores("Dragon Garow Lee");
+		comicDTO.setColor(Boolean.TRUE);
+		comicDTO.setFechaVenta(LocalDate.now());
+		comicDTO.setEstado("ACTIVO");
+		comicDTO.setCantidad(20L);
+
+		gestionarComicPOJO.agregarListDTO(comicDTO);
+
+		Assert.assertTrue(gestionarComicPOJO.getListaComics().size() == 3);
 	}
 	
 }

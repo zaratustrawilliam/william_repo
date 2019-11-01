@@ -21,7 +21,7 @@ import javax.persistence.Table;
  * 
  * <b>Descripción:<b> Clase que determina <b>Caso de Uso:<b>
  * 
- * @author Lenovo
+ * @author William Vasquez
  * @version
  */
 
@@ -77,6 +77,41 @@ public class Comic implements Serializable {
 	 * Constructor de la clase.
 	 */
 	public Comic() {
+	}
+	
+	/**
+	 * 
+	 * Constructor de la clase.
+	 * @param id
+	 * @param nombre
+	 * @param editorial
+	 * @param tematica
+	 * @param coleccion
+	 * @param numeroPaginas
+	 * @param precio
+	 * @param autores
+	 * @param color
+	 * @param fecha
+	 * @param estado
+	 * @param cantidad
+	 */
+	
+	public Comic(String id, String nombre, String editorial,String tematica, 
+			String coleccion,int numeroPaginas,BigDecimal precio,String autores, boolean color, LocalDate fecha,
+			String estado, long cantidad) {
+		this.id = id;
+		this.nombre = nombre;
+		this.editorial = editorial;
+		this.tematicaEnum = tematica;
+		this.coleccion = coleccion;
+		this.numeroPaginas = numeroPaginas;
+		this.precio = precio;
+		this.autores = autores;
+		this.color = color;
+		this.fechaVenta = fecha;
+		this.estadoEnum = estado;
+		this.cantidad = cantidad;
+		
 	}
 
 	/**

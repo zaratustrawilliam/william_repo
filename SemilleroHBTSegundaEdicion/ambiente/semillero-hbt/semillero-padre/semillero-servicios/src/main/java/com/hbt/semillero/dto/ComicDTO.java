@@ -10,7 +10,7 @@ import com.hbt.semillero.entidades.TematicaEnum;
  * 
  * <b>Descripción:<b> Clase que determina
  * <b>Caso de Uso:<b> 
- * @author Gustavo Andres Arias
+ * @author william vasquez
  * @version 1
  */
 public class ComicDTO  implements Serializable{
