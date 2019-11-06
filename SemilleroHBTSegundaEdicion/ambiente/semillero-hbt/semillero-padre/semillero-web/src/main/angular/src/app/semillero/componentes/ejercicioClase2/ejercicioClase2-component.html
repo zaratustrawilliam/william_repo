@@ -1,0 +1,19 @@
+<ul *ngFor="let item of lista">
+    <li>{{conv(item)}}</li>
+</ul>
+<br>
+<button type="button" class="btn btn-primary" (click) = "eliminarTres(3);">Eliminar 3 comic</button>
+<br>
+<br>
+{{ "Se ha eliminado el comic con nombre " + comicEliminado}}
+<div *ngIf="comicEliminado.length!=0">Se elimino: {{comicEliminado}} </div>
+<div *ngIf="comicEliminado.length==1">el comic no existe !</div>
+<br>
+<table *ngIf="comicEliminadoDTO != null && comicEliminadoDTO != undefined">
+    <tr>
+        <td>{{"id: " + comicEliminadoDTO.id}}</td>
+        <td>{{"nombre: " + comicEliminadoDTO.nombre}}</td>
+        <td>{{"editorial: " + comicEliminadoDTO.editorial}}</td>
+        <td>{{"tematica: " + comicEliminadoDTO.tematica}}</td>
+    </tr>
+</table>
