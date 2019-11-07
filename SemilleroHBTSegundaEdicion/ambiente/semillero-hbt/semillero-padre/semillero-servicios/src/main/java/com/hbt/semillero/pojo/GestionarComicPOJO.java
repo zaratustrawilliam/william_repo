@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.hbt.semillero.dto.ComicDTO;
+import com.hbt.semillero.entidades.EstadoEnum;
+import com.hbt.semillero.entidades.TematicaEnum;
 
 /**
  * <b>Descripción:<b> Clase que determina
@@ -47,9 +49,9 @@ public class GestionarComicPOJO {
 	 * @param cantidad
 	 * @return
 	 */
-	public ComicDTO CrearComicDTO(String id, String nombre, String editorial,String tematica, 
+	public ComicDTO CrearComicDTO(String id, String nombre, String editorial,TematicaEnum tematica, 
 			String coleccion,int numeroPaginas,BigDecimal precio,String autores, boolean color, LocalDate fecha,
-			String estado, long cantidad) {
+			EstadoEnum estado, long cantidad) {
 		return new ComicDTO(id,nombre,editorial,tematica,coleccion,numeroPaginas,precio,autores,color,fecha,estado,cantidad);
 	}
 	

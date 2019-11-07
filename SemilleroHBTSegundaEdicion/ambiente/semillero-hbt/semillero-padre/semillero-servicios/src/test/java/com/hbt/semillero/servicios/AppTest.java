@@ -201,58 +201,6 @@ public class AppTest {
 		Assert.assertTrue(pu.getListaComics().isEmpty());
 	}
 	
-	@Test(enabled = false)
-	public void creartComicDTOTest() {
-		GestionarComicPOJO gestionarComicPOJO = new GestionarComicPOJO();
-
-		ComicDTO comicDTO = gestionarComicPOJO.CrearComicDTO("101", "Captain America Corps 1-5 USA", "Panini Comics",
-				TematicaEnum.FANTASTICO.name(), "BIBLIOTECA MARVEL", 128, new BigDecimal(5000),
-				"Phillippe Briones, Roger Stern", Boolean.FALSE, LocalDate.now(), "ACTIVO", 5L);
-
-		gestionarComicPOJO.agregarListDTO(comicDTO);
-
-		Assert.assertNotNull(gestionarComicPOJO.getListaComics());
-		Assert.assertTrue(!gestionarComicPOJO.getListaComics().isEmpty());
-		Assert.assertTrue(gestionarComicPOJO.getListaComics().size() == 1);
-
-		comicDTO = new ComicDTO();
-
-		comicDTO.setId("100");
-		comicDTO.setNombre("Dragon ball Yamcha");
-		comicDTO.setEditorial("Planeta Cómic");
-		comicDTO.setTematica(TematicaEnum.AVENTURAS.name());
-		comicDTO.setColeccion("Manga Shonen");
-		comicDTO.setNumeroPaginas(100);
-		comicDTO.setPrecio(new BigDecimal(2100));
-		comicDTO.setAutores("Dragon Garow Lee");
-		comicDTO.setColor(Boolean.TRUE);
-		comicDTO.setFechaVenta(LocalDate.now());
-		comicDTO.setEstado("ACTIVO");
-		comicDTO.setCantidad(20L);
-
-		gestionarComicPOJO.agregarListDTO(comicDTO);
-
-		Assert.assertTrue(gestionarComicPOJO.getListaComics().size() > 1);
-
-		comicDTO = new ComicDTO();
-
-		comicDTO.setId("100");
-		comicDTO.setNombre("Dragon ball Yamcha");
-		comicDTO.setEditorial("Planeta Cómic");
-		comicDTO.setTematica(TematicaEnum.AVENTURAS.name());
-		comicDTO.setColeccion("Manga Shonen");
-		comicDTO.setNumeroPaginas(100);
-		comicDTO.setPrecio(new BigDecimal(2100));
-		comicDTO.setAutores("Dragon Garow Lee");
-		comicDTO.setColor(Boolean.TRUE);
-		comicDTO.setFechaVenta(LocalDate.now());
-		comicDTO.setEstado("ACTIVO");
-		comicDTO.setCantidad(20L);
-
-		gestionarComicPOJO.agregarListDTO(comicDTO);
-
-		Assert.assertTrue(gestionarComicPOJO.getListaComics().size() == 3);
-	}
 	
 }
 

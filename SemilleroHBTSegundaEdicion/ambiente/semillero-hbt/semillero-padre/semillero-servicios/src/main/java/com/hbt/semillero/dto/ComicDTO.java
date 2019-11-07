@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import com.hbt.semillero.entidades.EstadoEnum;
 import com.hbt.semillero.entidades.TematicaEnum;
 
 /**
@@ -26,7 +27,7 @@ public class ComicDTO  implements Serializable{
 
 	private String editorial;
 	
-	private String tematica;
+	private TematicaEnum tematica;
 
 	private String coleccion;
 
@@ -48,7 +49,7 @@ public class ComicDTO  implements Serializable{
 	private LocalDate fechaVenta;
 	
 	// TODO
-	private String estado;
+	private EstadoEnum estado;
 	
 	private Long cantidad;
 	
@@ -68,9 +69,9 @@ public class ComicDTO  implements Serializable{
 	 * @param estado
 	 * @param cantidad
 	 */
-	public ComicDTO(String id, String nombre, String editorial, String tematica, String coleccion,
+	public ComicDTO(String id, String nombre, String editorial, TematicaEnum tematica, String coleccion,
 			Integer numeroPaginas, BigDecimal precio, String autores, Boolean color, LocalDate fechaVenta,
-			String estado, Long cantidad) {
+			EstadoEnum estado, Long cantidad) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -153,7 +154,7 @@ public class ComicDTO  implements Serializable{
 	 * Metodo encargado de retornar el valor del atributo tematica
 	 * @return El tematica asociado a la clase
 	 */
-	public String getTematica() {
+	public TematicaEnum getTematica() {
 		return tematica;
 	}
 
@@ -161,7 +162,7 @@ public class ComicDTO  implements Serializable{
 	 * Metodo encargado de modificar el valor del atributo tematica
 	 * @param tematica El nuevo tematica a modificar.
 	 */
-	public void setTematica(String tematica) {
+	public void setTematica(TematicaEnum tematica) {
 		this.tematica = tematica;
 	}
 
@@ -265,7 +266,7 @@ public class ComicDTO  implements Serializable{
 	 * Metodo encargado de retornar el valor del atributo estado
 	 * @return El estado asociado a la clase
 	 */
-	public String getEstado() {
+	public EstadoEnum getEstado() {
 		return estado;
 	}
 
@@ -273,7 +274,7 @@ public class ComicDTO  implements Serializable{
 	 * Metodo encargado de modificar el valor del atributo estado
 	 * @param estado El nuevo estado a modificar.
 	 */
-	public void setEstado(String estado) {
+	public void setEstado(EstadoEnum estado) {
 		this.estado = estado;
 	}
 
