@@ -53,7 +53,7 @@ public class GestionarComicBean implements IGestionarComicLocal {
 	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 	public ComicDTO consultarComic(String id) {
 		
-		Comic comic = en.find(Comic.class,id);
+		Comic comic = en.find(Comic.class,Long.parseLong(id));
 		ComicDTO comicDTO = convertirComicToComicDTO(comic);
 		return comicDTO;
 	}
@@ -87,6 +87,7 @@ public class GestionarComicBean implements IGestionarComicLocal {
 	 * @see com.htb.semillero.ejb.IGestionarComicLocal#eliminarComic(java.lang.Long)
 	 */
 	@Override
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void eliminarComic(Long idComic) {
 		if(en.find(Comic.class,idComic) != null) {
 			en.remove(en.find(Comic.class,idComic));
