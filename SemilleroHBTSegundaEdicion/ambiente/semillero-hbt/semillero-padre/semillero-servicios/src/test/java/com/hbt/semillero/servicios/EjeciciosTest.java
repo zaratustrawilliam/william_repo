@@ -133,5 +133,21 @@ public class EjeciciosTest {
 		int [] esperado2 = {1,0,0,0,0};
 		Assert.assertEquals(EjerciciosPOJO.cambio(1000),esperado2);
 	}
+	
+	/**
+	 * 
+	 * Metodo encargado de probar el ejercicio 11
+	 * <b>Caso de Uso</b>
+	 * @author acer
+	 *
+	 */
+	@Test
+	public void pruebaEjercicio11() {
+		EjerciciosPOJO p = new EjerciciosPOJO();
+		Assert.assertEquals(p.siguiente("80","36"),46);
+		
+		
+	}
+	
 
 }

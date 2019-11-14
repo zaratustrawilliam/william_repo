@@ -206,4 +206,53 @@ public class EjerciciosPOJO {
 	public void ejercicio9() throws Exception{
 		throw new Exception();
 	}
+	
+	/**
+	 * 
+	 * Metodo encargado de entregar el sig num
+	 * <b>Caso de Uso</b>
+	 * @author acer
+	 * 
+	 * @param num1
+	 * @param num2
+	 * @return
+	 */
+	public String siguiente(String num1,String num2) {
+		int sum1=0,sum2 = 0,sum = 0;
+		
+		for(int i = 0;i < num1.length();i++) {
+			sum1+=Integer.parseInt(num1.charAt(i)+"");
+		}
+		for(int i = 0;i < num2.length();i++) {
+			sum2+=Integer.parseInt(num2.charAt(i)+"");
+		}
+		
+		sum = sum2 + (sum2-sum1);
+		return num(sum);
+		
+	}
+	
+	/**
+	 * 
+	 * Metodo encargado de retornar el num
+	 * <b>Caso de Uso</b>
+	 * @author acer
+	 * 
+	 * @param suma
+	 * @return
+	 */
+	public String num(int suma) {
+		if(suma < 10) {
+			return suma + "";
+		}
+		int num1 = 1;
+		int num2 = 1;
+		while(num1 + num2 == suma) {
+			if(num2 > 9) {
+				num1++;
+				num2 = 1;
+			}
+		}
+		return "" + num1+num2;
+	}
 }
