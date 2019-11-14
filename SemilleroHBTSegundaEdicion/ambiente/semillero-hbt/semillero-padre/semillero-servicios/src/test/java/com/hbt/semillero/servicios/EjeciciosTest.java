@@ -69,10 +69,10 @@ public class EjeciciosTest {
 		Assert.assertEquals(EjerciciosPOJO.esPrimo(num),true);
 		
 		num = 222;
-		Assert.assertEquals(EjerciciosPOJO.esPrimo(num),true);
+		Assert.assertEquals(EjerciciosPOJO.esPrimo(num),false);
 		
 		num = 15;
-		Assert.assertEquals(EjerciciosPOJO.esPrimo(num),true);
+		Assert.assertEquals(EjerciciosPOJO.esPrimo(num),false);
 	}
 
 }
