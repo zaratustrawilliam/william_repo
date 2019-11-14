@@ -161,4 +161,38 @@ public class EjerciciosPOJO {
 		return ganador;
 	}
 	
+	
+	
+	/**
+	 * 
+	 * Metodo encargado de calcular el cambio
+	 * <b>Caso de Uso</b>
+	 * @author acer
+	 * 
+	 * @param cambio
+	 * @return
+	 */
+	public static int[] cambio(int cambio) {
+		int []  cambioFinal = new int [5];
+		while(cambio > 0) {
+			if(cambio > 1000) {
+				cambioFinal[0]+=1;
+				cambio-=1000;
+			}else if(cambio > 500) {
+				cambioFinal[1]+=1;
+				cambio-=500;
+			}else if(cambio > 200) {
+				cambioFinal[2]+=1;
+				cambio-=200;
+			}else if(cambio > 100) {
+				cambioFinal[3]+=1;
+				cambio-=100;
+			}else if(cambio > 50) {
+				cambioFinal[4]+=1;
+				cambio-=50;
+			}
+		}
+		return cambioFinal;
+	}
+	
 }

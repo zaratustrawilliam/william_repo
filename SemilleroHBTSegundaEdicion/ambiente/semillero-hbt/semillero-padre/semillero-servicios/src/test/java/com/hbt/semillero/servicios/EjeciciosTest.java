@@ -102,14 +102,33 @@ public class EjeciciosTest {
 		p.llenarLista(249);
 		Assert.assertEquals(p.datosMostrar(),"-2,249,4");
 	}
-	
-	@Test
+	/**
+	 * 
+	 * Metodo encargado de probar ejercicio 7
+	 * <b>Caso de Uso</b>
+	 * @author acer
+	 *
+	 */
+	@Test(enabled = false)
 	public void pruebaEjercicio7() {
 		EjerciciosPOJO p = new EjerciciosPOJO();
 		p.agregarJugadores("federer", "thiem");
 		p.agregarSet("federer", 3,"thiem", 6);
 		p.agregarSet("federer", 2,"thiem", 6);
 		Assert.assertEquals(p.verificarGanador(),"thiem");
+	}
+	
+	/**
+	 * 
+	 * Metodo encargado de probar el ejercicio 8
+	 * <b>Caso de Uso</b>
+	 * @author acer
+	 *
+	 */
+	@Test
+	public void pruebaEjercicio8() {
+		int [] esperado = {5,1,0,0,1};
+		Assert.assertEquals(EjerciciosPOJO.cambio(5550),esperado);
 	}
 
 }
