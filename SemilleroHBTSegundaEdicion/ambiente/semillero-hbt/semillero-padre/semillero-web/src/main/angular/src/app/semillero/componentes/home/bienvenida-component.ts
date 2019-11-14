@@ -23,6 +23,7 @@ export class BienvenidaComponent implements OnInit {
     let data = this.activatedRoute.snapshot.params;
     
     console.log("Parametros recibidos " + data);
+    console.log(JSON.stringify(data));
     
   }
 

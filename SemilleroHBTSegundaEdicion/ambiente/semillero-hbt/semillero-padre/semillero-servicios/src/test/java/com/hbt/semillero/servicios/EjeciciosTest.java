@@ -146,7 +146,6 @@ public class EjeciciosTest {
 		EjerciciosPOJO p = new EjerciciosPOJO();
 		Assert.assertEquals(p.siguiente("80","36"),46);
 		
-		
 	}
 	
 
