@@ -23,5 +23,27 @@ public class EjerciciosPOJO {
 
 	} 
 	
+	/**
+	 * 
+	 * Metodo encargado de pribar que un numero es primo
+	 * <b>Caso de Uso</b>
+	 * @author acer
+	 * 
+	 * @param numero
+	 * @return
+	 */
+	public static boolean esPrimo(int numero) {
+		int contador = 0;
+		if(numero == 0 || numero == 1 || numero == 2) {
+			return true;
+		}
+		for(int i = 1; i < numero /2 ; i ++) {
+			if(numero % i == 0 ) {
+				contador++;
+			}
+		}
+		return contador <= 2;
+	}
+	
 
 }

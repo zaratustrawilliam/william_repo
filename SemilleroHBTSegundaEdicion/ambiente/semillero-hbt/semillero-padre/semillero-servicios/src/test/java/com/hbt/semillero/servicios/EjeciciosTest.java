@@ -3,6 +3,7 @@
  */
 package com.hbt.semillero.servicios;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.hbt.semillero.pojo.EjerciciosPOJO;
@@ -58,5 +59,20 @@ public class EjeciciosTest {
 		EjerciciosPOJO.ejercicioIni();
 	}
 	
+	/**
+	 * Prueba ejercicio 3 primos
+	 */
+	@Test
+	public void pruebaEjercicio3() {
+		
+		int num = 0;
+		Assert.assertEquals(EjerciciosPOJO.esPrimo(num),true);
+		
+		num = 222;
+		Assert.assertEquals(EjerciciosPOJO.esPrimo(num),true);
+		
+		num = 15;
+		Assert.assertEquals(EjerciciosPOJO.esPrimo(num),true);
+	}
 
 }
