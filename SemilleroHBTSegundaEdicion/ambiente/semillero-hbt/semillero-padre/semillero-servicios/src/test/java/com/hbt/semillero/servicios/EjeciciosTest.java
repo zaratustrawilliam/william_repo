@@ -129,6 +129,9 @@ public class EjeciciosTest {
 	public void pruebaEjercicio8() {
 		int [] esperado = {5,1,0,0,1};
 		Assert.assertEquals(EjerciciosPOJO.cambio(5550),esperado);
+		
+		int [] esperado2 = {1,0,0,0,0};
+		Assert.assertEquals(EjerciciosPOJO.cambio(1000),esperado2);
 	}
 
 }
