@@ -19,6 +19,12 @@ export class ConsultarComicComponent implements OnInit{
      */
     public comic: ComicDTO;
 
+    /**
+     * Constructor 
+     * @param fb 
+     * @param router 
+     * @param activatedRoute 
+     */
     constructor(private fb : FormBuilder,
         private router : Router, private activatedRoute: ActivatedRoute) { 
         this.gestionarComicForm = this.fb.group({
@@ -48,6 +54,9 @@ export class ConsultarComicComponent implements OnInit{
         this.mostrarInfo();
     }
 
+    /**
+     * Metodo encargado de mostrar toda la informacion del comic
+     */
     public mostrarInfo():void{
         this.gestionarComicForm.controls.nombre.setValue(this.comic.nombre);
         this.gestionarComicForm.controls.editorial.setValue(this.comic.editorial);
@@ -67,6 +76,9 @@ export class ConsultarComicComponent implements OnInit{
         this.gestionarComicForm.controls.color.disable();
     }
 
+    /**
+     * Nos permite ir a gestionar comic tras el evento click
+     */
     public irAtras(): void{
         this.router.navigate(['gestionar-comic']);
     }
