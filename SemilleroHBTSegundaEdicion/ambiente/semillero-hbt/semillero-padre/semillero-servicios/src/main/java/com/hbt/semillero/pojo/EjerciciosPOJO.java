@@ -3,6 +3,8 @@
  */
 package com.hbt.semillero.pojo;
 
+import java.time.LocalDate;
+
 /**
  * <b>Descripción:<b> Clase que determina
  * <b>Caso de Uso:<b> 
@@ -45,5 +47,19 @@ public class EjerciciosPOJO {
 		return contador <= 2;
 	}
 	
+	/**
+	 * 
+	 * Metodo encargado de validar que i fecha de nac mas mi edad es iagual a la fecha de hoy
+	 * <b>Caso de Uso</b>
+	 * @author acer
+	 * 
+	 * @return
+	 */
+	public static boolean miFecha() {
+		
+		LocalDate fech =  LocalDate.of(1998,5,18);
+		fech.plusYears(21);
+		return fech.equals(LocalDate.now());
+	}
 
 }

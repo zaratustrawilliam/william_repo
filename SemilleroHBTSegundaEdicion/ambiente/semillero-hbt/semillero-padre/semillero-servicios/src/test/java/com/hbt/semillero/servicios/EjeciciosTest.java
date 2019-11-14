@@ -16,7 +16,7 @@ import com.hbt.semillero.pojo.EjerciciosPOJO;
  */
 public class EjeciciosTest {
 	
-	@Test
+	@Test(enabled = false)
 	public void testUnitary() {
 		
 		/**
@@ -54,7 +54,7 @@ public class EjeciciosTest {
 	/**
 	 * NO SE DEBEN LLAMAR ATRIBUTOS DE CLASE DENTRO DE UN METODO ESTATICO, POR LO TANTO VOLVI LOS ATRIBUTOS ESTATICS
 	 */
-	@Test
+	@Test(enabled = false)
 	public void ejercicio2TEST() {
 		EjerciciosPOJO.ejercicioIni();
 	}
@@ -62,7 +62,7 @@ public class EjeciciosTest {
 	/**
 	 * Prueba ejercicio 3 primos
 	 */
-	@Test
+	@Test(enabled = false)
 	public void pruebaEjercicio3() {
 		
 		int num = 0;
@@ -73,6 +73,11 @@ public class EjeciciosTest {
 		
 		num = 15;
 		Assert.assertEquals(EjerciciosPOJO.esPrimo(num),false);
+	}
+	
+	@Test
+	public void pruebaEhercicicio4() {
+		Assert.assertEquals(EjerciciosPOJO.miFecha(),false);
 	}
 
 }
