@@ -81,9 +81,26 @@ public class EjeciciosTest {
 	 * @author acer
 	 *
 	 */
-	@Test
+	@Test(enabled = false)
 	public void pruebaEhercicicio4() {
 		Assert.assertEquals(EjerciciosPOJO.miFecha(),false);
+	}
+	
+	/**
+	 * 
+	 * Metodo encargado de probar el ejerciico5
+	 * <b>Caso de Uso</b>
+	 * @author acer
+	 *
+	 */
+	@Test
+	public void pruebaEjercicio5() {
+		EjerciciosPOJO p = new EjerciciosPOJO();
+		p.llenarLista(-2);
+		p.llenarLista(50);
+		p.llenarLista(1);
+		p.llenarLista(249);
+		Assert.assertEquals(p.datosMostrar(),"-2,249,4");
 	}
 
 }

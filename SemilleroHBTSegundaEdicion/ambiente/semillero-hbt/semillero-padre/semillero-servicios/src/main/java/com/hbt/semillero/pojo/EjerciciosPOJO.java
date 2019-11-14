@@ -4,6 +4,8 @@
 package com.hbt.semillero.pojo;
 
 import java.time.LocalDate;
+import java.util.Collections;
+import java.util.LinkedList;
 
 /**
  * <b>Descripción:<b> Clase que determina
@@ -55,11 +57,41 @@ public class EjerciciosPOJO {
 	 * 
 	 * @return
 	 */
+	
 	public static boolean miFecha() {
 		
 		LocalDate fech =  LocalDate.of(1998,5,18);
 		fech.plusYears(21);
 		return fech.equals(LocalDate.now());
+	}
+	
+	LinkedList <Integer> list =  new LinkedList<Integer>();
+	
+	/**
+	 * 
+	 * Metodo encargado de llenar la lista
+	 * <b>Caso de Uso</b>
+	 * @author acer
+	 * 
+	 * @param num
+	 */
+	public void llenarLista(int num) {
+		list.add(num);
+	}
+	
+	/**
+	 * 
+	 * Metodo encargado de retornar los avlores
+	 * <b>Caso de Uso</b>
+	 * @author acer
+	 * 
+	 * @return
+	 */
+	public String datosMostrar() {
+		
+		Collections.sort(list);
+		
+		return ""+list.getFirst() + ","+list.getLast()+","+list.size();
 	}
 
 }

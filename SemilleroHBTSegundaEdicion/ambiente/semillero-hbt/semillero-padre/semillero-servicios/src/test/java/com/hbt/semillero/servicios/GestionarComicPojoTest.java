@@ -28,7 +28,7 @@ public class GestionarComicPojoTest {
 	 * @author William Vasquez
 	 *
 	 */
-	@Test
+	@Test(enabled = false)
 	public void PUeliminar() {
 		GestionarComicPOJO g = new GestionarComicPOJO();
 		g.agregarListDTO(g.CrearComicDTO("1", "Dragon Ball Yamcha", "Planeta Comic", TematicaEnum.AVENTURAS, "Manga Shonen", 
@@ -53,7 +53,7 @@ public class GestionarComicPojoTest {
 	 * @author William Vasquez
 	 *
 	 */
-	@Test
+	@Test(enabled = false)
 	public void PUmodificar() {
 		GestionarComicPOJO g = new GestionarComicPOJO();
 		g.agregarListDTO(g.CrearComicDTO("1", "Dragon Ball Yamcha", "Planeta Comic", TematicaEnum.AVENTURAS, "Manga Shonen", 
