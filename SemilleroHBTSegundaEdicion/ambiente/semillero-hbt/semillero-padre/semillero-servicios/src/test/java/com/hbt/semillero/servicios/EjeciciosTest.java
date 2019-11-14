@@ -74,7 +74,13 @@ public class EjeciciosTest {
 		num = 15;
 		Assert.assertEquals(EjerciciosPOJO.esPrimo(num),false);
 	}
-	
+	/**
+	 * 
+	 * Metodo encargado de probar el ejercicio4
+	 * <b>Caso de Uso</b>
+	 * @author acer
+	 *
+	 */
 	@Test
 	public void pruebaEhercicicio4() {
 		Assert.assertEquals(EjerciciosPOJO.miFecha(),false);
