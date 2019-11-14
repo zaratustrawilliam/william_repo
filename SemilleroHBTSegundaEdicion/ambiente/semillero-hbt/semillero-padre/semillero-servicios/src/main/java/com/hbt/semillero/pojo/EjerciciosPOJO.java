@@ -5,6 +5,7 @@ package com.hbt.semillero.pojo;
 
 import java.time.LocalDate;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
@@ -94,4 +95,70 @@ public class EjerciciosPOJO {
 		return ""+list.getFirst() + ","+list.getLast()+","+list.size();
 	}
 
+	HashMap<String,Integer> partido = new HashMap<>();
+	
+	/**
+	 * 
+	 * Metodo encargado de agregar al ganador un set
+	 * <b>Caso de Uso</b>
+	 * @author acer
+	 * 
+	 * @param ganador
+	 */
+	public void agregarSetGanador (String ganador) {
+		partido.put(ganador, partido.get(ganador)+ 1);
+	}
+	
+	/**
+	 * 
+	 * Metodo encargado de agregar el juego
+	 * <b>Caso de Uso</b>
+	 * @author acer
+	 * 
+	 * @param jugador1
+	 * @param val1
+	 * @param jugador2
+	 * @param val2
+	 */
+	public void agregarSet(String jugador1, int val1,String jugador2,int val2 ) {
+		if(val1 > val2) {
+			agregarSetGanador(jugador1);
+		}else {
+			agregarSetGanador(jugador2);
+		}
+	}
+	/**
+	 * 
+	 * Metodo encargado de agregar los jugadores
+	 * <b>Caso de Uso</b>
+	 * @author acer
+	 * 
+	 * @param jug1
+	 * @param jug2
+	 */
+	public void agregarJugadores(String jug1, String jug2) {
+		partido.put(jug1,0);
+		partido.put(jug2, 0);
+	}
+	
+	/**
+	 * 
+	 * Metodo encargado de verificar al ganador
+	 * <b>Caso de Uso</b>
+	 * @author acer
+	 * 
+	 * @return
+	 */
+	public String verificarGanador() {
+		int val = 0;
+		String ganador = "Empate";
+		for(String i : partido.keySet()) {
+			if(val < partido.get(i)) {
+				val = partido.get(i);
+				ganador = i;
+			}
+		}
+		return ganador;
+	}
+	
 }

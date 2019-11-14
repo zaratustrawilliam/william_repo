@@ -93,7 +93,7 @@ public class EjeciciosTest {
 	 * @author acer
 	 *
 	 */
-	@Test
+	@Test(enabled = false)
 	public void pruebaEjercicio5() {
 		EjerciciosPOJO p = new EjerciciosPOJO();
 		p.llenarLista(-2);
@@ -101,6 +101,15 @@ public class EjeciciosTest {
 		p.llenarLista(1);
 		p.llenarLista(249);
 		Assert.assertEquals(p.datosMostrar(),"-2,249,4");
+	}
+	
+	@Test
+	public void pruebaEjercicio7() {
+		EjerciciosPOJO p = new EjerciciosPOJO();
+		p.agregarJugadores("federer", "thiem");
+		p.agregarSet("federer", 3,"thiem", 6);
+		p.agregarSet("federer", 2,"thiem", 6);
+		Assert.assertEquals(p.verificarGanador(),"thiem");
 	}
 
 }
