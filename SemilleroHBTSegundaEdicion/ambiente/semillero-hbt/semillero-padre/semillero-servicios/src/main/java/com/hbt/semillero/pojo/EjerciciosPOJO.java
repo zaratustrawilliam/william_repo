@@ -195,4 +195,15 @@ public class EjerciciosPOJO {
 		return cambioFinal;
 	}
 	
+	/**
+	 * 
+	 * Metodo encargado del ejercicio 9 
+	 * <b>Caso de Uso</b>
+	 * @author acer
+	 * 
+	 * @throws Exception
+	 */
+	public void ejercicio9() throws Exception{
+		throw new Exception();
+	}
 }

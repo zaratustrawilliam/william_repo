@@ -125,7 +125,7 @@ public class EjeciciosTest {
 	 * @author acer
 	 *
 	 */
-	@Test
+	@Test(enabled = false)
 	public void pruebaEjercicio8() {
 		int [] esperado = {5,1,0,0,1};
 		Assert.assertEquals(EjerciciosPOJO.cambio(5550),esperado);
