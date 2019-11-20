@@ -90,6 +90,7 @@ public class GestionarComicBean implements IGestionarComicLocal {
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void eliminarComic(Long idComic) {
 		if(en.find(Comic.class,idComic) != null) {
+			System.out.println("Entro a eliminar");
 			en.remove(en.find(Comic.class,idComic));
 		}
 	}

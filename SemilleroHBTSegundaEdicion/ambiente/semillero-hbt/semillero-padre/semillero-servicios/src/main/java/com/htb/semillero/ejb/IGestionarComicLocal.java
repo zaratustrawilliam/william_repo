@@ -45,6 +45,7 @@ public interface IGestionarComicLocal {
 	 * @author ccastano
 	 * 
 	 * @param comicEliminar informacion a eliminar
+	 * @return 
 	 */
 	public void eliminarComic(Long idComic);
 
