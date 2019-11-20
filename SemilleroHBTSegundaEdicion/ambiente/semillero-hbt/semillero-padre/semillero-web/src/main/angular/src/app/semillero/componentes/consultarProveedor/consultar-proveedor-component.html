@@ -1,0 +1,23 @@
+<h3>Consultar proveedor</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Estado </th>
+            <th scope="col">Fecha Creacion/th>
+            <th scope="col">Id Persona</th>
+            <th scope="col">Monto Credito</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr >
+            <th scope="row">{{proveedorDTO.id}}</th>
+            <td>{{proveedorDTO.direccion | uppercase }}</td>
+            <td>{{proveedorDTO.estadoProveedor | uppercase }}</td>
+            <td>{{proveedorDTO.fechaContratacion }}</td>
+            <td>{{proveedorDTO.ValorCredito | number: '.2'}}</td>
+            <td>{{proveedorDTO.idPersona }}</td>
+        </tr>
+    </tbody>
+</table>
